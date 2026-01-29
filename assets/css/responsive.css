@@ -469,6 +469,31 @@
 		padding-top: 8vh;
 	}
 	
+	/* Fix for slider text disappearing on mobile when scrolling */
+	.homepage-slider {
+		min-height: 100vh;
+		position: relative;
+	}
+	
+	.homepage-slider .single-homepage-slider {
+		min-height: 100vh;
+	}
+	
+	.homepage-slider .hero-text {
+		display: flex !important;
+		align-items: center;
+		justify-content: center;
+		min-height: 100vh;
+		position: relative;
+	}
+	
+	.homepage-slider .hero-text-tablecell {
+		display: block !important;
+		position: relative;
+		width: 100%;
+		padding: 0 20px;
+	}
+	
 	/* Remove outline from mobile menu elements */
 	.mean-container a.meanmenu-reveal,
 	.mean-container a.meanmenu-reveal:focus,
