@@ -471,27 +471,54 @@
 	
 	/* Fix for slider text disappearing on mobile when scrolling */
 	.homepage-slider {
-		min-height: 100vh;
+		min-height: 100vh !important;
 		position: relative;
+		overflow: visible !important;
+	}
+	
+	.homepage-slider .owl-stage-outer {
+		overflow: visible !important;
+	}
+	
+	.homepage-slider .owl-stage {
+		overflow: visible !important;
+	}
+	
+	.homepage-slider .owl-item {
+		overflow: visible !important;
 	}
 	
 	.homepage-slider .single-homepage-slider {
-		min-height: 100vh;
+		min-height: 100vh !important;
+		overflow: visible !important;
 	}
 	
 	.homepage-slider .hero-text {
 		display: flex !important;
 		align-items: center;
 		justify-content: center;
-		min-height: 100vh;
+		min-height: 100vh !important;
 		position: relative;
+		transform: none !important;
 	}
 	
 	.homepage-slider .hero-text-tablecell {
 		display: block !important;
-		position: relative;
+		position: relative !important;
 		width: 100%;
 		padding: 0 20px;
+		transform: none !important;
+	}
+	
+	/* Force opacity to 1 to prevent Owl Carousel animation from hiding text */
+	.homepage-slider .hero-text-tablecell .subtitle,
+	.homepage-slider .hero-text-tablecell h1,
+	.homepage-slider .hero-btns,
+	.homepage-slider .hero-text-tablecell *,
+	.homepage-slider .hero-text * {
+		opacity: 1 !important;
+		visibility: visible !important;
+		transform: none !important;
 	}
 	
 	/* Remove outline from mobile menu elements */
