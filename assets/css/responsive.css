@@ -474,10 +474,12 @@
 	.homepage-slider {
 		min-height: 100vh !important;
 		position: relative;
+		z-index: 1 !important; /* Stay below header (z-index: 1000) */
 	}
 	
 	.homepage-slider .single-homepage-slider {
 		min-height: 100vh !important;
+		z-index: 1; /* Stay below header */
 	}
 	
 	.homepage-slider .hero-text {
@@ -486,6 +488,7 @@
 		justify-content: center;
 		min-height: 100vh !important;
 		position: relative;
+		z-index: 2; /* Higher than slider bg, but lower than header */
 	}
 	
 	.homepage-slider .hero-text-tablecell {
