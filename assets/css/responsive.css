@@ -470,27 +470,14 @@
 	}
 	
 	/* Fix for slider text disappearing on mobile when scrolling */
+	/* Keep original overflow behavior to not break mobile menu */
 	.homepage-slider {
 		min-height: 100vh !important;
 		position: relative;
-		overflow: visible !important;
-	}
-	
-	.homepage-slider .owl-stage-outer {
-		overflow: visible !important;
-	}
-	
-	.homepage-slider .owl-stage {
-		overflow: visible !important;
-	}
-	
-	.homepage-slider .owl-item {
-		overflow: visible !important;
 	}
 	
 	.homepage-slider .single-homepage-slider {
 		min-height: 100vh !important;
-		overflow: visible !important;
 	}
 	
 	.homepage-slider .hero-text {
@@ -499,7 +486,6 @@
 		justify-content: center;
 		min-height: 100vh !important;
 		position: relative;
-		transform: none !important;
 	}
 	
 	.homepage-slider .hero-text-tablecell {
@@ -507,18 +493,26 @@
 		position: relative !important;
 		width: 100%;
 		padding: 0 20px;
-		transform: none !important;
 	}
 	
-	/* Force opacity to 1 to prevent Owl Carousel animation from hiding text */
+	/* Force ALL elements to stay visible - override Owl Carousel animations */
 	.homepage-slider .hero-text-tablecell .subtitle,
 	.homepage-slider .hero-text-tablecell h1,
 	.homepage-slider .hero-btns,
-	.homepage-slider .hero-text-tablecell *,
-	.homepage-slider .hero-text * {
+	.homepage-slider .hero-text-tablecell a,
+	.homepage-slider .hero-text p,
+	.homepage-slider .hero-text h1 {
 		opacity: 1 !important;
 		visibility: visible !important;
-		transform: none !important;
+	}
+	
+	/* Ensure the animated class doesn't hide content */
+	.homepage-slider .animated {
+		opacity: 1 !important;
+	}
+	
+	.homepage-slider .fadeInUp {
+		opacity: 1 !important;
 	}
 	
 	/* Remove outline from mobile menu elements */

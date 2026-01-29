@@ -133,27 +133,33 @@
 
     // homepage slides animations
     $(".homepage-slider").on("translate.owl.carousel", function () {
-      $(".hero-text-tablecell .subtitle")
-        .removeClass("animated fadeInUp")
-        .css({ opacity: "0" });
-      $(".hero-text-tablecell h1")
-        .removeClass("animated fadeInUp")
-        .css({ opacity: "0", "animation-delay": "0.3s" });
-      $(".hero-btns")
-        .removeClass("animated fadeInUp")
-        .css({ opacity: "0", "animation-delay": "0.5s" });
+      // Skip animations on mobile to prevent text from disappearing
+      if ($(window).width() > 767) {
+        $(".hero-text-tablecell .subtitle")
+          .removeClass("animated fadeInUp")
+          .css({ opacity: "0" });
+        $(".hero-text-tablecell h1")
+          .removeClass("animated fadeInUp")
+          .css({ opacity: "0", "animation-delay": "0.3s" });
+        $(".hero-btns")
+          .removeClass("animated fadeInUp")
+          .css({ opacity: "0", "animation-delay": "0.5s" });
+      }
     });
 
     $(".homepage-slider").on("translated.owl.carousel", function () {
-      $(".hero-text-tablecell .subtitle")
-        .addClass("animated fadeInUp")
-        .css({ opacity: "0" });
-      $(".hero-text-tablecell h1")
-        .addClass("animated fadeInUp")
-        .css({ opacity: "0", "animation-delay": "0.3s" });
-      $(".hero-btns")
-        .addClass("animated fadeInUp")
-        .css({ opacity: "0", "animation-delay": "0.5s" });
+      // Skip animations on mobile to prevent text from disappearing  
+      if ($(window).width() > 767) {
+        $(".hero-text-tablecell .subtitle")
+          .addClass("animated fadeInUp")
+          .css({ opacity: "1" }); // Changed from "0" to "1" - this was a bug!
+        $(".hero-text-tablecell h1")
+          .addClass("animated fadeInUp")
+          .css({ opacity: "1", "animation-delay": "0.3s" }); // Changed from "0" to "1"
+        $(".hero-btns")
+          .addClass("animated fadeInUp")
+          .css({ opacity: "1", "animation-delay": "0.5s" }); // Changed from "0" to "1"
+      }
     });
 
     // stikcy js
